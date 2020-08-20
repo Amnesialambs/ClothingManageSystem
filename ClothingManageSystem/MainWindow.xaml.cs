@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,20 @@ namespace ClothingManageSystem
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ShowWeb_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start((sender as Hyperlink).Tag.ToString());
         }
     }
 }

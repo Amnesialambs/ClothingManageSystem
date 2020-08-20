@@ -4,9 +4,76 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClothingManageSystem"
+        xmlns:dragablz="clr-namespace:Dragablz;assembly=Dragablz"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow"
+        Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStyle="None">
     <Grid>
-        
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
+            <TextBlock Text="Dotnet9.com：可拖拽TabControl" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontFamily="Champagne &amp; Limousines" />
+            <Button HorizontalAlignment="Right" VerticalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" Click="Close_Click">
+                <materialDesign:PackIcon Kind="Close"/>
+            </Button>
+        </Grid>
+        <Grid Margin="0 60 0 0">
+            <dragablz:TabablzControl>
+                <dragablz:TabablzControl.InterTabController>
+                    <dragablz:InterTabController/>
+                </dragablz:TabablzControl.InterTabController>
+                <TabItem Header="首页">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Run Text="欢迎访问Dotnet9的博客："/>
+                            <Hyperlink Click="ShowWeb_Click" Tag="https://dotnet9.com">https://dotnet9.com</Hyperlink>
+                        </TextBlock>
+                        <WebBrowser Grid.Row="1" Margin="5" Source="https://www.cnblogs.com/pangjianxin/p/7877868.html"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="设计">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="为用户体验服务！" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <WebBrowser Grid.Row="1" Margin="5" Source="https://dotnet9.com"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="帮助">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Run Text="问答社区："/>
+                            <Hyperlink Click="ShowWeb_Click" Tag="https://dotnet9.com/questions-and-answers">https://dotnet9.com/questions-and-answers</Hyperlink>
+                        </TextBlock>
+                        <WebBrowser Grid.Row="1" Margin="5" Source="https://dotnet9.com/questions-and-answers"/>
+                    </Grid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <Image Source="https://img.dotnet9.com/logo.png"/>
+                    </TabItem.Header>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30">
+                            <Hyperlink Click="ShowWeb_Click" Tag="https://dotnet9.com">https://dotnet9.com</Hyperlink>
+                        </TextBlock>
+                        <WebBrowser Grid.Row="1" Margin="5" Source="https://dotnet9.com"/>
+                    </Grid>
+                </TabItem>
+            </dragablz:TabablzControl>
+        </Grid>
     </Grid>
 </Window>
