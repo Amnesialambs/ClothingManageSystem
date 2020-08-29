@@ -90,6 +90,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="entity\ItemMenu.cs" />
+    <Compile Include="entity\SubItem.cs" />
+    <Compile Include="page\orderInit.xaml.cs">
+      <DependentUpon>orderInit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page\UserControlCustomers.xaml.cs">
+      <DependentUpon>UserControlCustomers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page\UserControlMenuItem.xaml.cs">
+      <DependentUpon>UserControlMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="page\UserControlProviders.xaml.cs">
+      <DependentUpon>UserControlProviders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="utils\FileUtil.cs" />
     <Compile Include="utils\NpoiExcelUtil.cs" />
     <Compile Include="utils\SQLLiteDBUtil.cs" />
@@ -105,6 +119,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="page\orderInit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page\UserControlCustomers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page\UserControlMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="page\UserControlProviders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -136,8 +166,6 @@
   <ItemGroup>
     <Folder Include="controller\" />
     <Folder Include="dao\" />
-    <Folder Include="entity\" />
-    <Folder Include="page\" />
     <Folder Include="service\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
