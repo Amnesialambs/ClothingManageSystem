@@ -8,7 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="600" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
+        Height="960" Width="1080" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
         MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStyle="None">
     <Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF9C27B0">
